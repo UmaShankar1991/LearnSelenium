@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.sukgu.Shadow;
 
-public class AdministratorCert {
+public class ArchitectCert {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -45,12 +46,21 @@ public class AdministratorCert {
 
 		driver.findElement(By.xpath("(//button[contains(text(),'Accept')])[2]")).click();
 		
-		if(driver.getTitle().equals("Certification - Administrator Overview")) {
-			System.out.println("Test Passed");
-			driver.quit();}
-		else
-			System.out.println("Test Failed");
+		driver.findElement(By.cssSelector("img[alt*=Architect]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Salesforce Architect')]")).getText();
+		List<WebElement> certList = driver.findElements(By.xpath("//div[contains(@class, 'title')]/a"));
+		System.out.println("Available Salesforce Architect Certifications: ");
+		for (WebElement webElement : certList)
+			System.out.println(webElement.getText());
+		
+		//Click on Application Architect
+		driver.findElement(By.linkText("Application Architect")).click();
+
+		
+		List<WebElement> appArchCerts = driver.findElements(By.xpath("//div[text()='Certification']/following-sibling::div/a"));
+		System.out.println("\nAvailable Application Architect certifications: ");
+		for (WebElement webElement : appArchCerts)
+			System.out.println(webElement.getText());		
 	}
-	
 
 }
