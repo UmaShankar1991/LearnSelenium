@@ -46,10 +46,11 @@ public class AdministratorCert {
 		driver.findElement(By.xpath("(//button[contains(text(),'Accept')])[2]")).click();
 		
 		if(driver.getTitle().equals("Certification - Administrator Overview")) {
-			System.out.println("Test Passed");
+			System.out.println("--------------------Test Passed---------------------------");
+
 			driver.quit();}
 		else
-			System.out.println("Test Failed");
+			System.out.println("--------------------Test Failed---------------------------");
 	}
 	
 

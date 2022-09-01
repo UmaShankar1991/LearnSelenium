@@ -55,7 +55,6 @@ public class ArchitectCert {
 		
 		//Click on Application Architect
 		driver.findElement(By.linkText("Application Architect")).click();
-
 		
 		List<WebElement> appArchCerts = driver.findElements(By.xpath("//div[text()='Certification']/following-sibling::div/a"));
 		System.out.println("\nAvailable Application Architect certifications: ");

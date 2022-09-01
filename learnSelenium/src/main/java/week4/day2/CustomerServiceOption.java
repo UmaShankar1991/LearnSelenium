@@ -55,12 +55,12 @@ public class CustomerServiceOption {
 		for (WebElement webElement : serviceList) {
 			System.out.println(webElement.getText());
 		}
-		System.out.println("Test Pass");
+		System.out.println("--------------------Test Passed---------------------------");
 		driver.quit();
 		}
 		
 		else {
-			System.out.println("Test Failed");
+			System.out.println("--------------------Test Failed---------------------------");
 		}
 		
 	}
